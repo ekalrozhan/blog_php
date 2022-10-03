@@ -1,4 +1,9 @@
 <?php include("header.php"); ?>
+<?php include("post.php"); ?>
+<?php
+$post = new Post($db);
+$post->addPost();
+?>
 
 <div class="container">
     <div class="row justify-content-center mt-5">
