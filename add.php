@@ -5,11 +5,12 @@
 $post = new Post($db);
 // $post->addPost();
 if (isset($_POST['btnSubmit'])) {
+    $date = date('Y-m-d');
 
     if (!empty($_POST['title']) && !empty($_POST['description'])) {
         $title = strip_tags($_POST['title']);
         $description = strip_tags($_POST['description']);
-        $record = $post->addPost($title, $description, uploadImage());
+        $record = $post->addPost($title, $description, uploadImage(), $date);
 
         if ($record == True) {
             echo "<div class='text-center alert alert-success'>Post Added Successfully!</div>";

@@ -9,7 +9,7 @@ function uploadImage()
     $ext = pathinfo($imagename, PATHINFO_EXTENSION);
 
     if (in_array($ext, $allowed)) {
-        move_uploaded_file($imagename, "images/" . $imagename);
+        move_uploaded_file($imagetmp, "images/" . $imagename);
     } else {
         echo "Only png, jpg, and jpeg image format are allowed!";
     }

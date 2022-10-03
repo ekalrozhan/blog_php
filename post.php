@@ -13,9 +13,9 @@ class Post
     }
 
     // insert data
-    public function addPost($title, $description, $image)
+    public function addPost($title, $description, $image, $date)
     {
-        $sql = "INSERT INTO posts(title, description, image) VALUES('$title', '$description', '$image')";
+        $sql = "INSERT INTO posts(title, description, image, created_at) VALUES('$title', '$description', '$image', '$date')";
         $result = mysqli_query($this->db, $sql);
         return $result;
     }
