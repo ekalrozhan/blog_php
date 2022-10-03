@@ -10,7 +10,9 @@ if (isset($_POST['btnSubmit'])) {
     if (!empty($_POST['title']) && !empty($_POST['description'])) {
         $title = strip_tags($_POST['title']);
         $description = strip_tags($_POST['description']);
-        $record = $post->addPost($title, $description, uploadImage(), $date);
+        $slug = createSlug($title);
+
+        $record = $post->addPost($title, $slug, $description, uploadImage(), $date);
 
         if ($record == True) {
             echo "<div class='text-center alert alert-success'>Post Added Successfully!</div>";

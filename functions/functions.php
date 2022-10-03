@@ -16,3 +16,10 @@ function uploadImage()
 
     return $imagename;
 }
+
+
+function createSlug($string)
+{
+    $slug = preg_replace('/[^A-Za-z0-9]+/', '-', $string);
+    return $slug;
+}
