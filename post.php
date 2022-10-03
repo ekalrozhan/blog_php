@@ -14,9 +14,6 @@ class Post
     {
         $sql = "INSERT INTO posts(title, description) VALUES('$title', '$description')";
         $result = mysqli_query($this->db, $sql);
-
-        if($result){
-            echo "Post added succesfully";
-        }
+        return $result;
     }
 }
